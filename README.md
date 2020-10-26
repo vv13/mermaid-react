@@ -13,16 +13,22 @@ npm install --save mermaid-react
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
+import MermaidReact from 'mermaid-react'
 
-import MyComponent from 'mermaid-react'
-import 'mermaid-react/dist/index.css'
+const t = `
+pie title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15
+`
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return <MermaidReact id='test' mmd={t} onClick={() => console.log('test Click')} onRender={svg => console.log('render content', svg)} />
 }
+
+export default App
+
 ```
 
 ## License
